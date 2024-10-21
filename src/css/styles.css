@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(../images/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & input:focus-visible {
+    outline: none;
+  }
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 18px;
+    background: #10101d;
+    border-radius: 8px;
+    width: 430px;
+
+    & h1 {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    & .create-tasks {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      & #input-task {
+        width: 100%;
+        background: none;
+        color: #e5f9ff;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #ee9ca7;
+      }
+
+      & .button-form-create-task {
+        background: #ee9ca7;
+        min-height: 40px;
+        min-width: 40px;
+        font-size: 20px;
+        transition: scale 0.5s ease;
+        border: none;
+        border-radius: 100%;
+      }
+
+      & .button-form-create-task:hover {
+        cursor: pointer;
+        scale: 1.05;
+      }
+    }
+
+    & .container-tasks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 400px;
+      overflow: auto;
+
+      & .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color: #262626;
+        background-color: #191933;
+        border-radius: 8px;
+        padding: 10px;
+
+        & .task-check{
+          display: flex;
+        }
+
+        & .edit-task {
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          padding: 10px;
+
+          & .input-description {
+            width: 100%;
+            background: none;
+            color: #e5f9ff;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid #ee9ca7;
+          }
+          & .button-form-update-task {
+            background: #ee9ca7;
+            min-height: 40px;
+            min-width: 40px;
+            font-size: 20px;
+            transition: scale 0.5s ease;
+            border: none;
+            border-radius: 100%;
+          }
+
+          & .button-form-update-task:hover {
+            cursor: pointer;
+            scale: 1.05;
+          }
+        }
+      }
+
+      & .task-description {
+        color: #fff;
+      }
+    }
+  }
+}
+
+& .hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 300px;
+  }
+}
